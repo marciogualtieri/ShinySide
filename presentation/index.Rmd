@@ -46,10 +46,7 @@ Statistical computing languages such as [R](https://www.r-project.org/about.html
 
 <center>
 <table>
-<tr>
-<td><img src="images/rlogo.png"/></td>
-<td><img src="images/jupyterlogo.png"/></td>
-</tr>
+<tr><td><img src="images/rlogo.png"/></td><td><img src="images/jupyterlogo.png"/></td></tr>
 </table>
 </center>
 
@@ -76,44 +73,14 @@ Often, if I may illustrate this concisely, the goal of a data scientist is to go
 
 To the following, which might take a few iterations to get just right:
 
-<table class="table-striped"><thead>
-<tr>
-<th>apartment_id</th>
-<th>dishwasher</th>
-<th>hardwood_floors</th>
-<th>sunlight</th>
-<th>closet_space</th>
-<th>freshly_painted</th>
-<th>heat_included</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>123</td>
-<td>TRUE</td>
-<td>TRUE</td>
-<td>TRUE</td>
-<td>TRUE</td>
-<td>TRUE</td>
-<td>TRUE</td>
-</tr>
-<tr>
-<td>456</td>
-<td>TRUE</td>
-<td>TRUE</td>
-<td>FALSE</td>
-<td>TRUE</td>
-<td>FALSE</td>
-<td>TRUE</td>
-</tr>
-<tr>
-<td>789</td>
-<td>FALSE</td>
-<td>TRUE</td>
-<td>TRUE</td>
-<td>TRUE</td>
-<td>TRUE</td>
-<td>FALSE</td>
-</tr>
+<table class="table-striped">
+<thead>
+<tr><th>apartment_id</th><th>dishwasher</th><th>hardwood_floors</th><th>sunlight</th><th>closet_space</th><th>freshly_painted</th><th>heat_included</th></tr>
+</thead>
+<tbody>
+<tr><td>123</td><td>TRUE</td><td>TRUE</td><td>TRUE</td><td>TRUE</td><td>TRUE</td><td>TRUE</td></tr>
+<tr><td>456</td><td>TRUE</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>FALSE</td><td>TRUE</td></tr>
+<tr><td>789</td><td>FALSE</td><td>TRUE</td><td>TRUE</td><td>TRUE</td><td>TRUE</td><td>FALSE</td></tr>
 </tbody></table>
 
 ---
@@ -140,6 +107,18 @@ ShinySide makes text-mining for feature extraction less painful by offering the 
 )
 </center>
 
+---
+
+## Running ShinySide
+
 <center><h3>[Demo ShinySide](https://marciogualtieri.shinyapps.io/shinyside/) | [Get the Code](https://github.com/marciogualtieri/ShinySide)</h3></center>
 
+At the end of the demo, you should be able to download the `*.rda` file with the result data frame. You may load it to R by running the following command:
 
+```{r}
+suppressMessages(library(xtable))
+result <- readRDS("../output/result2017-03-02.rda")
+str(result)
+```
+
+Note that the features extracted are present in the data-set. You're ready for some machine learning.
