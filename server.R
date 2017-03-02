@@ -1,0 +1,18 @@
+source("globals.R")
+source("utils.R")
+source("styles.R")
+source("controllers/tableController.R")
+source("controllers/loaderController.R")
+source("controllers/extractorController.R")
+source("controllers/wordcloudController.R")
+source("controllers/creatorController.R")
+source("controllers/readmeController.R")
+
+shinyServer(function(input, output, session) {
+  apply_styles()
+  loader_controller(input, output)
+  extractor_controller(input, output, session)
+  wordcloud_controller(input, output)
+  creator_controller(input, output, session)
+  readme_controller(input, output)
+})
