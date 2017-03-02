@@ -1,0 +1,187 @@
+<!DOCTYPE HTML>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US" class="ie ie6 lt-ie9">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US" class="ie ie7 lt-ie9">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US" class="ie ie8 lt-ie9">
+<![endif]-->
+<!--[if gte IE 9]>
+<html lang="en-US" class="ie ie9">
+<![endif]-->
+<!--[if !(IE)]><!-->
+<html lang="en-US" class="">
+<head>
+  <title>ShinySide: A Text-Mining Tool Developed with the Shiny Framework</title>
+  <link rel="stylesheet" href="libraries/frameworks/flowtime/assets/css/reset.css">
+  <link rel="stylesheet" href="libraries/frameworks/flowtime/css/flowtime.css">
+  <link rel="stylesheet" href="libraries/frameworks/flowtime/css/themes/default.css">
+  <link rel="stylesheet" href="libraries/frameworks/flowtime/assets/css/prism.css">
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css">  <link rel="stylesheet" href = "assets/css/ribbons.css">
+<link rel="stylesheet" href = "assets/css/style.css">
+
+</head>
+<body>
+  <div class="flowtime">
+    <div class="ft-section " data-id="section-1">
+<div class="ft-page " data-title="">
+  <p><center><h1>ShinySide</h1></center>
+<center><h2>A Text-Mining Tool Developed with Shiny</h2></center>
+<center><img src="images/shinysidelogo.png" alt="ShinySide Logo"></center>
+<center><h3>By Marcio Gualtieri</h3></center>
+<center><h3>March 2, 2017</h3></center></p>
+		
+</div>
+</div>
+<div class="ft-section " data-id="section-2">
+<div class="ft-page " data-title="">
+  <h2>It&#39;s a Messy, Messy, Data World</h2>
+
+<p><img src="images/socialmedia.png" alt="Social Media Landscape"></p>
+
+<p>One of the greatest challenges to data science in the age of big data is dealing with large amounts of <a href="https://en.wikipedia.org/wiki/Unstructured_data">unstructure data</a>, which is ubiquotus in the social media landscape.</p>
+
+<p>Even if you are new to the field, you likely heard the rule of thumb &quot;somewhere around 80-90% of data science work is cleaning-up data&quot; several times by now.</p>
+		
+</div>
+</div>
+<div class="ft-section " data-id="section-3">
+<div class="ft-page " data-title="">
+  <p>In fact, the issue has even been brought up in the mainstream media. The following excerpt comes from an article in the New York times:</p>
+
+<blockquote>
+<p>The field known as “big data” offers a contemporary case study. The catchphrase stands for the modern abundance of digital data from many sources — the web, sensors, smartphones and corporate databases — that can be mined with clever software for discoveries and insights. Its promise is smarter, data-driven decision-making in every field. That is why data scientist is the economy’s hot new job. Yet far too much handcrafted work — what data scientists call “data wrangling,” “data munging” and “data janitor work”.<sup>[1]</sup></p>
+</blockquote>
+
+<p>[1] The New York Times. <a href="https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html">&quot;For Big-Data Scientists, &#39;Janitor Work&#39; Is Key Hurdle to Insights&quot;</a>.</p>
+		
+</div>
+</div>
+<div class="ft-section " data-id="section-4">
+<div class="ft-page " data-title="">
+  <h2>Text-Mining</h2>
+
+<p>Even though unstructured data may come in different shapes (<a href="https://en.wikipedia.org/wiki/Internet_of_things">IOT</a>, images, videos, etc, come to mind), each one presenting its own challenge, a common form of unstructured data is text from diverse web sources such as social media platforms, blogs, online retailers and many others. For such scenarios, <a href="https://en.wikipedia.org/wiki/Data_mining">data mining</a>, <a href="https://en.wikipedia.org/wiki/Natural_language_processing">NLP</a> and <a href="https://en.wikipedia.org/wiki/Text_mining">text analytics</a> come to the rescue.</p>
+
+<p>Statistical computing languages such as <a href="https://www.r-project.org/about.html">R</a> offers many packages for this purpose (<a href="https://github.com/trinker/qdap">qdap</a>, <a href="https://www.rdocumentation.org/packages/tm/">tm</a>, <a href="https://www.rdocumentation.org/packages/RWeka">Rweka</a> and <a href="https://cran.r-project.org/web/packages/wordcloud/index.html">wordcloud</a> to cite a few). Online API&#39;s such as <a href="http://monkeylearn.com/">MonkeyLearn</a>, which uses machine learning on top of text-mining to automate some of the work for you, are also becoming common place.</p>
+
+<p><center></p>
+
+<table>
+<tr>
+<td><img src="images/rlogo.png"/></td>
+<td><img src="images/jupyterlogo.png"/></td>
+</tr>
+</table>
+
+<p></center></p>
+
+<p>Still, text-mining is often labour intensive and it&#39;s iterative in nature, that is, you will often make small adjustments in your cleanup algorithm and go over the same process over and over until you achieve the desired results. Data science professionals will often use <a href="https://blog.rstudio.org/2016/10/05/r-notebooks/">R</a> or <a href="https://ipython.org/notebook.html">Jupyter</a> notebooks for this purpose.</p>
+		
+</div>
+</div>
+<div class="ft-section " data-id="section-5">
+<div class="ft-page " data-title="">
+  <h2>Interactive Text-Mining</h2>
+
+<p>Often, if I may illustrate this concisely, the goal of a data scientist is to go from this:</p>
+
+<pre><code>    Spacious 1 Bedroom 1 Bathroom in Williamsburg!
+
+    Apartment Features:
+    - Renovated Eat in Kitchen With Dishwasher
+    - Renovated Bathroom- Beautiful Hardwood Floors
+    - Lots of Sunlight- Great Closet Space
+    - Freshly Painted- Heat and Hot Water Included
+    - Live in Super Nearby L, J, M &amp; G Trains ! 
+
+    Contact Information:
+    Kenneth Beak Exclusive Agent
+    C: 064-692-8838
+    Email: kagglemanager@renthop.com
+    Text or Email to schedule a private viewing!
+</code></pre>
+
+<p>To this:</p>
+
+<table class="table-striped"><thead>
+<tr>
+<th>apartment_id</th>
+<th>dishwasher</th>
+<th>hardwood_floors</th>
+<th>sunlight</th>
+<th>closet_space</th>
+<th>freshly_painted</th>
+<th>heat_included</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>123</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+</tr>
+<tr>
+<td>456</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>FALSE</td>
+<td>TRUE</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr>
+<td>789</td>
+<td>FALSE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>FALSE</td>
+</tr>
+</tbody></table>
+
+<p>Which might take a few iterations to get just right.</p>
+		
+</div>
+</div>
+<div class="ft-section " data-id="section-6">
+<div class="ft-page " data-title="">
+  <p>ShinySide makes text-mining for feature extraction less painful by offering the capability of performing it interactively through a UI:
+<center>
+<img src="https://g.gravizo.com/g?%0A%20%20digraph%20G%20%7B%0A%20%20%20%20DataLoad%20%5Bshape=box,label=%22Load%20Input%20Data%22,style=filled,color=%22.7%20.3%201.0%22%5D;%0A%20%20%20%20ExtractKeywords%20%5Bshape=box,label=%22Extract%20N-Grams%20from%20Text%20Input%22,style=filled,color=%22.7%20.3%201.0%22%5D;%0A%20%20%20%20RemoveKeywords%20%5Bshape=box,label=%22Remove%20Unwanted%20N-Grams%22,style=filled,color=%22.7%20.3%201.0%22%5D;%0A%20%20%20%20GraphicalExploration%20%5Bshape=box,label=%22Visualize%20Word%20Cloud%22,style=filled,color=%22.7%20.3%201.0%22%5D;%0A%20%20%20%20IsNGramReady%20%5Blabel=%22Happy%20with%20N-Grams?%22,style=filled,color=%22.7%20.3%201.0%22%5D;%0A%20%20%20%20ExportDataset%20%5Blabel=%22Export%20New%20Data-set%20with%20Features%22,style=filled,color=%22.7%20.3%201.0%22%5D;%0A%20%20%20%20FeatureExtraction%20%5Bshape=box,label=%22Create%20Features%20from%20Selected%20N-Grams%22,style=filled,color=%22.7%20.3%201.0%22%5D;%0A%20%20%20%20DataLoad%20-%3E%20ExtractKeywords%0A%20%20%20%20ExtractKeywords%20-%3E%20RemoveKeywords%0A%20%20%20%20RemoveKeywords%20-%3E%20GraphicalExploration%0A%20%20%20%20GraphicalExploration%20-%3E%20IsNGramReady%0A%20%20%20%20IsNGramReady%20-%3E%20RemoveKeywords%20%5B%20label=%22No%22%20%5D;%0A%20%20%20%20IsNGramReady%20-%3E%20FeatureExtraction%20%5B%20label=%22Yes%22%20%5D;%0A%20%20%20%20FeatureExtraction%20-%3E%20ExportDataset%0A%20%20%7D" alt="ShinyServer">
+</center></p>
+
+<p><center><h3><a href="https://marciogualtieri.shinyapps.io/shinyside/">Demo ShinySide</a> | <a href="https://github.com/marciogualtieri/ShinySide">Get the Code</a></h3></center></p>
+		
+</div>
+</div>
+  </div>
+</body>
+  <script src="libraries/frameworks/flowtime/js/brav1toolbox.js"></script>
+  <script src="libraries/frameworks/flowtime/js/flowtime.js"></script>
+	<script src="libraries/frameworks/flowtime/assets/js/prism.js"></script>
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+    <script>
+    // Configuration API test
+		Flowtime.showProgress(true);
+		// Flowtime.fragmentsOnSide(true);
+		// Flowtime.fragmentsOnBack(true);
+		// Flowtime.useHistory(false);
+		// Flowtime.slideInPx(true);
+		// Flowtime.sectionsSlideToTop(true);
+		// Flowtime.gridNavigation(false);
+		// Flowtime.useOverviewVariant(true);
+		Flowtime.parallaxInPx(true);
+    Flowtime.start();
+  </script>
+</html>

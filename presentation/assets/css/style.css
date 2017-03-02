@@ -1,0 +1,33 @@
+.table-striped > tbody > table {
+  display: block;
+  overflow-x: auto; 
+  max-height:400px;
+  overflow-y: auto;
+  border: 1px solid black;
+}
+
+.table-striped > thead> tr > th {
+    padding: 10px;
+    background-color: #1B83B6;
+    color: white;
+}
+
+.table-striped > tbody > tr:nth-child(even) {
+  background-color: #8FE5FF;
+  color: black;
+}
+
+.table-striped > tbody > tr:nth-child(odd) {
+    background-color: #CCF3FF;
+    color: black;
+}
+
+.table-striped > tbody > td {
+    padding: 10px;
+    border: 1px solid black;
+    color: black;
+}
+
+.table-striped {
+    text-align: center;
+}

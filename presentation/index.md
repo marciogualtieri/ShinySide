@@ -1,0 +1,150 @@
+---
+title       : "ShinySide: A Text-Mining Tool Developed with the Shiny Framework"
+subtitle    : "March 2, 2017"
+author      : "Marcio Gualtieri"
+job         : 
+framework   : flowtime        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+<center><h1>ShinySide</h1></center>
+<center><h2>A Text-Mining Tool Developed with Shiny</h2></center>
+<center>![ShinySide Logo](images/shinysidelogo.png)</center>
+<center><h3>By Marcio Gualtieri</h3></center>
+<center><h3>March 2, 2017</h3></center>
+
+--- 
+
+## It's a Messy, Messy, Data World
+
+![Social Media Landscape](images/socialmedia.png)
+
+One of the greatest challenges to data science in the age of big data is dealing with large amounts of [unstructure data](https://en.wikipedia.org/wiki/Unstructured_data), which is ubiquotus in the social media landscape.
+
+Even if you are new to the field, you likely heard the rule of thumb "somewhere around 80-90% of data science work is cleaning-up data" several times by now.
+
+--- 
+
+In fact, the issue has even been brought up in the mainstream media. The following excerpt comes from an article in the New York times:
+
+> The field known as “big data” offers a contemporary case study. The catchphrase stands for the modern abundance of digital data from many sources — the web, sensors, smartphones and corporate databases — that can be mined with clever software for discoveries and insights. Its promise is smarter, data-driven decision-making in every field. That is why data scientist is the economy’s hot new job. Yet far too much handcrafted work — what data scientists call “data wrangling,” “data munging” and “data janitor work”.<sup>[1]</sup>
+
+[1] The New York Times. ["For Big-Data Scientists, 'Janitor Work' Is Key Hurdle to Insights"](https://www.nytimes.com/2014/08/18/technology/for-big-data-scientists-hurdle-to-insights-is-janitor-work.html).
+
+
+--- 
+
+## Text-Mining
+
+Even though unstructured data may come in different shapes ([IOT](https://en.wikipedia.org/wiki/Internet_of_things), images, videos, etc, come to mind), each one presenting its own challenge, a common form of unstructured data is text from diverse web sources such as social media platforms, blogs, online retailers and many others. For such scenarios, [data mining](https://en.wikipedia.org/wiki/Data_mining), [NLP](https://en.wikipedia.org/wiki/Natural_language_processing) and [text analytics](https://en.wikipedia.org/wiki/Text_mining) come to the rescue.
+
+Statistical computing languages such as [R](https://www.r-project.org/about.html) offers many packages for this purpose ([qdap](https://github.com/trinker/qdap), [tm](https://www.rdocumentation.org/packages/tm/), [Rweka](https://www.rdocumentation.org/packages/RWeka) and [wordcloud](https://cran.r-project.org/web/packages/wordcloud/index.html) to cite a few). Online API's such as [MonkeyLearn](http://monkeylearn.com/), which uses machine learning on top of text-mining to automate some of the work for you, are also becoming common place.
+
+<center>
+<table>
+<tr>
+<td><img src="images/rlogo.png"/></td>
+<td><img src="images/jupyterlogo.png"/></td>
+</tr>
+</table>
+</center>
+
+Still, text-mining is often labour intensive and it's iterative in nature, that is, you will often make small adjustments in your cleanup algorithm and go over the same process over and over until you achieve the desired results. Data science professionals will often use [R](https://blog.rstudio.org/2016/10/05/r-notebooks/) or [Jupyter](https://ipython.org/notebook.html) notebooks for this purpose.
+
+--- 
+
+## Interactive Text-Mining
+
+Often, if I may illustrate this concisely, the goal of a data scientist is to go from this:
+
+        Spacious 1 Bedroom 1 Bathroom in Williamsburg!
+        
+        Apartment Features:
+        - Renovated Eat in Kitchen With Dishwasher
+        - Renovated Bathroom- Beautiful Hardwood Floors
+        - Lots of Sunlight- Great Closet Space
+        - Freshly Painted- Heat and Hot Water Included
+        - Live in Super Nearby L, J, M & G Trains ! 
+        
+        Contact Information:
+        Kenneth Beak Exclusive Agent
+        C: 064-692-8838
+        Email: kagglemanager@renthop.com
+        Text or Email to schedule a private viewing!
+
+To this:
+
+<table class="table-striped"><thead>
+<tr>
+<th>apartment_id</th>
+<th>dishwasher</th>
+<th>hardwood_floors</th>
+<th>sunlight</th>
+<th>closet_space</th>
+<th>freshly_painted</th>
+<th>heat_included</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>123</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+</tr>
+<tr>
+<td>456</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>FALSE</td>
+<td>TRUE</td>
+<td>FALSE</td>
+<td>TRUE</td>
+</tr>
+<tr>
+<td>789</td>
+<td>FALSE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>TRUE</td>
+<td>FALSE</td>
+</tr>
+</tbody></table>
+
+
+Which might take a few iterations to get just right.
+
+---
+
+ShinySide makes text-mining for feature extraction less painful by offering the capability of performing it interactively through a UI:
+<center>
+![ShinyServer](https://g.gravizo.com/g?
+  digraph G {
+    DataLoad [shape=box,label="Load Input Data",style=filled,color=".7 .3 1.0"];
+    ExtractKeywords [shape=box,label="Extract N-Grams from Text Input",style=filled,color=".7 .3 1.0"];
+    RemoveKeywords [shape=box,label="Remove Unwanted N-Grams",style=filled,color=".7 .3 1.0"];
+    GraphicalExploration [shape=box,label="Visualize Word Cloud",style=filled,color=".7 .3 1.0"];
+    IsNGramReady [label="Happy with N-Grams?",style=filled,color=".7 .3 1.0"];
+    ExportDataset [label="Export New Data-set with Features",style=filled,color=".7 .3 1.0"];
+    FeatureExtraction [shape=box,label="Create Features from Selected N-Grams",style=filled,color=".7 .3 1.0"];
+    DataLoad -> ExtractKeywords
+    ExtractKeywords -> RemoveKeywords
+    RemoveKeywords -> GraphicalExploration
+    GraphicalExploration -> IsNGramReady
+    IsNGramReady -> RemoveKeywords [ label="No" ];
+    IsNGramReady -> FeatureExtraction [ label="Yes" ];
+    FeatureExtraction -> ExportDataset
+  }
+)
+</center>
+
+<center><h3>[Demo ShinySide](https://marciogualtieri.shinyapps.io/shinyside/) | [Get the Code](https://github.com/marciogualtieri/ShinySide)</h3></center>
+
+
