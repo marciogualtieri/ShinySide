@@ -1,18 +1,17 @@
 # ShinySide
 
 ## Table of contents
+### 1. Overview
+### 2. User Guide
+#### 2.2 Extracting Keywords
+#### 2.2 Graphical Exploration
+#### 2.3 Creating Features
+### 3. Developer Guide
+#### 3.1 Architecture
+#### 3.2 Source Files
+#### 3.3 Deploying the App
 
-### 1. [Overview](#overview)
-### 2. [User Guide](#userguide)
-#### 2.2 [Extracting Keywords](#extractingkeywords)
-#### 2.2 [Graphical Exploration](#graphicalexploration)
-#### 2.3 [Creating Features](#creatingfeatures)
-### 3. [Developer Guide](#developerguide)
-#### 3.1 [Architecture](#architecture)
-#### 3.2 [Source Files](#sourcefiles)
-#### 3.3 [Deploying the App](#deployingtheapp)
-
-## Overview <a name="overview"></a>
+## Overview
 
 ShinySide is a text-mining tool inspired by [LightSide](http://ankara.lti.cs.cmu.edu/side/download.html), a Java application developed by folks from [Carnegie Mellon University](http://www.cmu.edu/).
 
@@ -59,9 +58,9 @@ The main purpose of this project is to showcase my text-mining and data product 
 
 I would rather code a production ready product in Scala, Clojure, Java or JavaScript. Shiny, as you may know, is more suitable for quick prototyping.
 
-## User Guide <a name="userguide"></a>
+## User Guide
 
-### Loading the Input Data <a name="loadingdata"></a>
+### Loading the Input Data
 
 You should get the following screen when opening the app from RStudio or remotely from [shinyapps.io](https://marciogualtieri.shinyapps.io/shinyside/):
 
@@ -95,7 +94,7 @@ After the uploading is complete, you will see the following screen:
 
 At the bottom of the table, you will see two pagination buttons (previous and next page) and a label with the range of records shown. You may use them to navigate the input data. Each page shows one hundred records.
 
-### Extracting Keywords <a name="extractingkeywords"></a>
+### Extracting Keywords
 
 Once the input data is loaded, you may click the next tab, "Keywords Extraction". You should see the following screen:
 
@@ -121,7 +120,7 @@ If you wish, you may remove them by selecting them from the "Choose Keywords to 
 
 Just select the keywords you wish to exclude from the drop down list. Once you are happy with your selection, click the "Extract" button again to get a new set of keywords without the excluded keywords.
 
-### Graphical Exploration <a name="graphicalexploration"></a>
+### Graphical Exploration
 
 We can do better than tables when the subject is visualizing keywords. We may plot a word cloud! Click the tab "Word Cloud". You should see the following screen:
 
@@ -133,7 +132,7 @@ Click the button "Generate Wordcloud"" to render the plot:
 
 You may use the sliders on the side panel on the left to change the frequency threshold and the maximum number of words to show in the plot.
 
-### Creating Features <a name="creatingfeatures"></a>
+### Creating Features
 
 The final step is creating features from the keywords available. Click the tab "Feature Creation". You should see the following screen:
 
@@ -151,9 +150,9 @@ Note that columns correspondent to each keyword have been added to the data-set.
 
 ![Download Result](images/create_features_download.png)
 
-## Developer Guide <a name="developerguide"></a>
+## Developer Guide
 
-### Architecture <a name="architecture"></a>
+### Architecture
 
 I have followed a somewhat loose [MVC pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) in this project as an attempt to keep the source files small and manageable.
 
@@ -189,7 +188,7 @@ Each tab in the application has a correspondent view and controller (or rather "
 
 In short, whatever code you would be put inside `ShinyUI()` is a view and whatever code you would be put inside `ShinyServer()` is a controller.
 
-### Source Files <a name="sourcefiles"></a>
+### Source Files
 
         ├── controllers
         │   ├── creatorController.R
@@ -259,7 +258,7 @@ The remaining source files are the standard ones for a Shiny project, so I won't
         ├── server.R
         └── ui.R
 
-### Deploying the App <a name="deployingtheapp"></a>
+### Deploying the App
 
 For my own use (I'm pretty sure I'm going to forget it), here are the instructions to deploy the app to shinyapps.io:
 
