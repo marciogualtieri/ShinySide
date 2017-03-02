@@ -21,9 +21,9 @@ knit        : slidify::knit2slides
 
 ## It's a Messy, Messy, Data World
 
-![Social Media Landscape](images/socialmedia.png)
+<center>![Social Media Landscape](images/socialmedia.png)</center>
 
-One of the greatest challenges to data science in the age of big data is dealing with large amounts of [unstructure data](https://en.wikipedia.org/wiki/Unstructured_data), which is ubiquotus in the social media landscape.
+One of the greatest challenges to data science in the age of big data is dealing with large amounts of [unstructure data](https://en.wikipedia.org/wiki/Unstructured_data), which is ubiquitous in the social media landscape.
 
 Even if you are new to the field, you likely heard the rule of thumb "somewhere around 80-90% of data science work is cleaning-up data" several times by now.
 
@@ -40,7 +40,7 @@ In fact, the issue has even been brought up in the mainstream media. The followi
 
 ## Text-Mining
 
-Even though unstructured data may come in different shapes ([IOT](https://en.wikipedia.org/wiki/Internet_of_things), images, videos, etc, come to mind), each one presenting its own challenge, a common form of unstructured data is text from diverse web sources such as social media platforms, blogs, online retailers and many others. For such scenarios, [data mining](https://en.wikipedia.org/wiki/Data_mining), [NLP](https://en.wikipedia.org/wiki/Natural_language_processing) and [text analytics](https://en.wikipedia.org/wiki/Text_mining) come to the rescue.
+Even though unstructured data may come in different shapes ([IOT](https://en.wikipedia.org/wiki/Internet_of_things), images, videos, etc, come to mind), each one presenting its own challenges, a common form of unstructured data is text from diverse web sources such as social media platforms, blogs, online retailers and many others. For such scenarios, [data mining](https://en.wikipedia.org/wiki/Data_mining), [NLP](https://en.wikipedia.org/wiki/Natural_language_processing) and [text analytics](https://en.wikipedia.org/wiki/Text_mining) come to the rescue.
 
 Statistical computing languages such as [R](https://www.r-project.org/about.html) offers many packages for this purpose ([qdap](https://github.com/trinker/qdap), [tm](https://www.rdocumentation.org/packages/tm/), [Rweka](https://www.rdocumentation.org/packages/RWeka) and [wordcloud](https://cran.r-project.org/web/packages/wordcloud/index.html) to cite a few). Online API's such as [MonkeyLearn](http://monkeylearn.com/), which uses machine learning on top of text-mining to automate some of the work for you, are also becoming common place.
 
@@ -53,7 +53,7 @@ Statistical computing languages such as [R](https://www.r-project.org/about.html
 </table>
 </center>
 
-Still, text-mining is often labour intensive and it's iterative in nature, that is, you will often make small adjustments in your cleanup algorithm and go over the same process over and over until you achieve the desired results. Data science professionals will often use [R](https://blog.rstudio.org/2016/10/05/r-notebooks/) or [Jupyter](https://ipython.org/notebook.html) notebooks for this purpose.
+Still, text-mining is often labor intensive and it's iterative in nature, that is, you will often make small adjustments in your cleanup algorithm and go over the same process over and over until you achieve the desired results. Data science professionals will often use [R](https://blog.rstudio.org/2016/10/05/r-notebooks/) or [Jupyter](https://ipython.org/notebook.html) notebooks for this purpose.
 
 --- 
 
@@ -62,21 +62,19 @@ Still, text-mining is often labour intensive and it's iterative in nature, that 
 Often, if I may illustrate this concisely, the goal of a data scientist is to go from this:
 
         Spacious 1 Bedroom 1 Bathroom in Williamsburg!
-        
         Apartment Features:
         - Renovated Eat in Kitchen With Dishwasher
         - Renovated Bathroom- Beautiful Hardwood Floors
         - Lots of Sunlight- Great Closet Space
         - Freshly Painted- Heat and Hot Water Included
         - Live in Super Nearby L, J, M & G Trains ! 
-        
         Contact Information:
         Kenneth Beak Exclusive Agent
         C: 064-692-8838
         Email: kagglemanager@renthop.com
         Text or Email to schedule a private viewing!
 
-To this:
+To the following, which might take a few iterations to get just right:
 
 <table class="table-striped"><thead>
 <tr>
@@ -117,9 +115,6 @@ To this:
 <td>FALSE</td>
 </tr>
 </tbody></table>
-
-
-Which might take a few iterations to get just right.
 
 ---
 

@@ -21,7 +21,7 @@ knit        : slidify::knit2slides
 
 ## It's a Messy, Messy, Data World
 
-![Social Media Landscape](images/socialmedia.png)
+<center>![Social Media Landscape](images/socialmedia.png)</center>
 
 One of the greatest challenges to data science in the age of big data is dealing with large amounts of [unstructure data](https://en.wikipedia.org/wiki/Unstructured_data), which is ubiquotus in the social media landscape.
 
@@ -62,21 +62,19 @@ Still, text-mining is often labour intensive and it's iterative in nature, that 
 Often, if I may illustrate this concisely, the goal of a data scientist is to go from this:
 
         Spacious 1 Bedroom 1 Bathroom in Williamsburg!
-        
         Apartment Features:
         - Renovated Eat in Kitchen With Dishwasher
         - Renovated Bathroom- Beautiful Hardwood Floors
         - Lots of Sunlight- Great Closet Space
         - Freshly Painted- Heat and Hot Water Included
         - Live in Super Nearby L, J, M & G Trains ! 
-        
         Contact Information:
         Kenneth Beak Exclusive Agent
         C: 064-692-8838
         Email: kagglemanager@renthop.com
         Text or Email to schedule a private viewing!
 
-To this:
+To the following, which might take a few iterations to get just right:
 
 <table class="table-striped"><thead>
 <tr>
@@ -117,9 +115,6 @@ To this:
 <td>FALSE</td>
 </tr>
 </tbody></table>
-
-
-Which might take a few iterations to get just right.
 
 ---
 
