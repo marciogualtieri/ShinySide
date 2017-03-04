@@ -1,5 +1,7 @@
 # ShinySide
 
+<center>![ShinySide Logo](images/shinysidelogo.png)</center>
+
 ## Table of contents
 ### 1. Overview
 ### 2. User Guide
