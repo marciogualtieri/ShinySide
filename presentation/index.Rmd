@@ -50,13 +50,13 @@ Statistical computing languages such as [R](https://www.r-project.org/about.html
 </table>
 </center>
 
-Still, text-mining is often labor intensive and it's iterative in nature, that is, you will often make small adjustments in your cleanup algorithm and go over the same process over and over until you achieve the desired results. Data science professionals will often use [R](https://blog.rstudio.org/2016/10/05/r-notebooks/) or [Jupyter](https://ipython.org/notebook.html) notebooks for this purpose.
+Still, text-mining is labor intensive and iterative in nature, that is, you will often make small adjustments in your cleanup algorithm and go over the same process over and over until you achieve the desired results. Data science professionals will often use [R](https://blog.rstudio.org/2016/10/05/r-notebooks/) or [Jupyter](https://ipython.org/notebook.html) notebooks for this purpose.
 
 --- 
 
 ## Interactive Text-Mining
 
-Often, if I may illustrate this concisely, the goal of a data scientist is to go from this:
+If I may illustrate this concisely, often the goal of a data scientist is to go from this:
 
         Spacious 1 Bedroom 1 Bathroom in Williamsburg!
         Apartment Features:
@@ -71,7 +71,7 @@ Often, if I may illustrate this concisely, the goal of a data scientist is to go
         Email: kagglemanager@renthop.com
         Text or Email to schedule a private viewing!
 
-To the following, which might take a few iterations to get just right:
+To this:
 
 <table class="table-striped">
 <thead>
@@ -82,6 +82,8 @@ To the following, which might take a few iterations to get just right:
 <tr><td>456</td><td>TRUE</td><td>TRUE</td><td>FALSE</td><td>TRUE</td><td>FALSE</td><td>TRUE</td></tr>
 <tr><td>789</td><td>FALSE</td><td>TRUE</td><td>TRUE</td><td>TRUE</td><td>TRUE</td><td>FALSE</td></tr>
 </tbody></table>
+
+Which might take a few iterations to get just right.
 
 ---
 
