@@ -1,6 +1,6 @@
 # ShinySide
 
-<center>![ShinySide Logo](images/shinysidelogo.png)</center>
+<p align="center"><img alt="ShinySide" src="images/shinysidelogo.png" /></p>
 
 ## Table of contents
 ### 1. Overview
