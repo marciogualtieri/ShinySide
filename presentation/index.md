@@ -119,7 +119,6 @@ At the end of the demo, you should be able to download the `*.rda` file with the
 
 
 ```r
-suppressMessages(library(xtable))
 result <- readRDS("../output/result2017-03-02.rda")
 str(result)
 ```
