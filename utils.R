@@ -65,7 +65,8 @@ normalize_keyword <- function(keyword)
   tolower(str_replace_all(keyword, "[^\\w]", "_"))
 
 add_feature <- function(data, columns, keyword) {
-  text <-  do.call(paste, data[, columns])
+  if(length(columns) > 1) text <-  do.call(paste, data[, columns])
+  else text <- data[, columns]
   normalized_keyword <- normalize_keyword(keyword)
   data[[normalized_keyword]] <- sapply(text, keyword_exists, keyword = keyword)
   return(data)
