@@ -66,7 +66,7 @@ normalize_keyword <- function(keyword)
 
 add_feature <- function(data, columns, keyword) {
   if(length(columns) > 1) text <-  do.call(paste, data[, columns])
-  else text <- data[, columns]
+  else text <- sapply(data[, columns], paste, collapse = ", ")
   normalized_keyword <- normalize_keyword(keyword)
   data[[normalized_keyword]] <- sapply(text, keyword_exists, keyword = keyword)
   return(data)

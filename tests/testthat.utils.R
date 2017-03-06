@@ -26,9 +26,16 @@ test_that("Create feature", {
   expect_that(add_feature(data, c("name", "name_array"), "moe howard"), equals(expected_data))
 })
 
-test_that("Create features", {
+test_that("Create features for Multiple Columns", {
   expected_data <- data
   expected_data$moe_howard <- c(TRUE, FALSE, FALSE)
   expected_data$phoebe_buffay <- c(FALSE, FALSE, TRUE)
   expect_that(add_features(data, c("name", "name_array"), c("moe howard", "phoebe buffay")), equals(expected_data))
+})
+
+test_that("Create features for Single Column", {
+  expected_data <- data
+  expected_data$moe_howard <- c(FALSE, FALSE, FALSE)
+  expected_data$phoebe_buffay <- c(FALSE, FALSE, TRUE)
+  expect_that(add_features(data, c("name_array"), c("moe howard", "phoebe buffay")), equals(expected_data))
 })
