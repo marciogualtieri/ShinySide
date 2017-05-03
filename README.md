@@ -162,9 +162,9 @@ As you might have noticed, the application is comprised of multiple screens each
 
 Each tab in the application has a correspondent view and controller (or rather "model/controller" if you want to be more precise).
 
-![](https://g.gravizo.com/source/svg/custom_mark1?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FShinySide%2Fmaster%2README.md)
+![](https://g.gravizo.com/source/svg/custom_mark1?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FShinySide%2Fmaster%2FREADME.md)
 
-<!--
+<!---
 custom_mark1
   digraph G {
     ShinyServer -> LoaderController;
@@ -180,9 +180,9 @@ custom_mark1
 custom_mark1
 -->
 
-![](https://g.gravizo.com/source/svg/custom_mark2?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FShinySide%2Fmaster%2README.md)
+![](https://g.gravizo.com/source/svg/custom_mark2?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FShinySide%2Fmaster%2FREADME.md)
 
-<!--
+<!---
 custom_mark2
 ![ShinyUI](https://g.gravizo.com/g?
   digraph G {
