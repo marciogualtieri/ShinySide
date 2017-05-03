@@ -184,7 +184,6 @@ custom_mark1
 
 <!---
 custom_mark2
-![ShinyUI](https://g.gravizo.com/g?
   digraph G {
     LoaderView [shape=box];
     ExtractorView [shape=box];
