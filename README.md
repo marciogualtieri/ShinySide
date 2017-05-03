@@ -162,10 +162,10 @@ As you might have noticed, the application is comprised of multiple screens each
 
 Each tab in the application has a correspondent view and controller (or rather "model/controller" if you want to be more precise).
 
-![](https://g.gravizo.com/source/svg/custom_mark1?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FShinySide%2Fmaster%2FREADME.md)
+![](https://g.gravizo.com/source/svg/custom_mark2?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FShinySide%2Fmaster%2FREADME.md)
 
 <!---
-custom_mark1
+custom_mark2
   digraph G {
     ShinyServer -> LoaderController;
     ShinyServer -> ExtractorController;
@@ -176,14 +176,13 @@ custom_mark1
     WordCloudController [shape=box];
     CreatorController [shape=box];
   }
-)
-custom_mark1
+custom_mark2
 -->
 
-![](https://g.gravizo.com/source/svg/custom_mark2?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FShinySide%2Fmaster%2FREADME.md)
+![](https://g.gravizo.com/source/svg/custom_mark3?https%3A%2F%2Fraw.githubusercontent.com%2Fmarciogualtieri%2FShinySide%2Fmaster%2FREADME.md)
 
 <!---
-custom_mark2
+custom_mark3
   digraph G {
     LoaderView [shape=box];
     ExtractorView [shape=box];
@@ -194,8 +193,7 @@ custom_mark2
     ShinyUI -> WordCloudView;
     ShinyUI -> CreatorView;
   }
-)
-custom_mark2
+custom_mark3
 -->
 
 In short, whatever code you would be put inside `ShinyUI()` is a view and whatever code you would be put inside `ShinyServer()` is a controller.
